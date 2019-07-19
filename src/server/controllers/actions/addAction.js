@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/named
 import { Action, Project } from '../../model';
-import { createError, NOT_FOUND } from '../../util/error';
+import { createError, NOT_FOUND, GENERIC_ERROR } from '../../util/error';
 import { createSuccess, CREATED } from '../../util/success';
 
 /**
@@ -30,10 +30,19 @@ const addAction = async (req, res, next) => {
       }),
     );
   } catch (error) {
+    if (error && error.code === 'SQLITE_CONSTRAINT') {
+      return next(
+        createError({
+          message: 'Project ID is invalid.',
+          status: NOT_FOUND,
+        }),
+      );
+    }
+
     return next(
       createError({
-        message: 'Project ID is invalid.',
-        status: NOT_FOUND,
+        message: 'Could not add new action',
+        status: GENERIC_ERROR,
       }),
     );
   }
