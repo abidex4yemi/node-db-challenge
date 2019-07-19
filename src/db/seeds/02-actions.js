@@ -17,5 +17,15 @@ exports.seed = function (knex) {
       description: 'Design and Build API Endpoints',
       notes: 'This is where the magic happens!',
     },
+    {
+      project_id: 2,
+      description: 'Wash the shoe lace',
+      notes: 'You need to clean it because is a white lace',
+    },
+    {
+      project_id: 2,
+      description: 'Dry shoe in the sun',
+      notes: 'Dry you shoe for 3 hours, remember not to over dry',
+    },
   ]);
 };
