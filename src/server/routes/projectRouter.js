@@ -1,5 +1,5 @@
 import express from 'express';
-import { getProjects, addProject } from '../controllers/projects';
+import { getProjects, addProject, getProjectById } from '../controllers/projects';
 import { validateProjectParam, validateProjectBody } from '../middleware';
 
 const router = express.Router();
@@ -12,5 +12,7 @@ router
   .route('/projects')
   .get(getProjects)
   .post(validateProjectBody, addProject);
+
+router.route('/projects/:id').get(getProjectById);
 
 export default router;
