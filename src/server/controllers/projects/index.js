@@ -2,3 +2,4 @@
 export { default as getProjects } from './getProjects';
 export { default as addProject } from './addProject';
 export { default as getProjectById } from './getProjectById';
+export { default as updateProject } from './updateProject';
