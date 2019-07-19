@@ -1,6 +1,11 @@
 import express from 'express';
 import {
-  getProjects, addProject, getProjectById, updateProject, getProjectActions,
+  getProjects,
+  addProject,
+  getProjectById,
+  updateProject,
+  getProjectActions,
+  deleteProject,
 } from '../controllers/projects';
 import { validateProjectParam, validateProjectBody } from '../middleware';
 
@@ -18,7 +23,8 @@ router
 router
   .route('/projects/:id')
   .get(getProjectById)
-  .put(validateProjectBody, updateProject);
+  .put(validateProjectBody, updateProject)
+  .delete(deleteProject);
 
 router.route('/projects/:id/actions').get(getProjectActions);
 
