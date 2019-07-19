@@ -1,6 +1,6 @@
 import express from 'express';
 import { validateActionParam, validateActionBody } from '../middleware';
-import { getActions, addAction } from '../controllers/actions';
+import { getActions, addAction, updateAction } from '../controllers/actions';
 
 const router = express.Router();
 
@@ -12,5 +12,7 @@ router
   .route('/actions')
   .get(getActions)
   .post(validateActionBody, addAction);
+
+router.route('/actions/:id').put(validateActionBody, updateAction);
 
 export default router;
