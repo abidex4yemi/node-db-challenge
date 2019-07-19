@@ -6,6 +6,7 @@ import logger from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';
 import errorHandler from './middleware/errorHandler';
+import { createSuccess, OK } from './util/success';
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.use(express.json());
 app.use(cors());
 app.use(logger('dev'));
 app.use(helmet());
+
+app.get('/', (req, res) => res.status(OK).json(createSuccess({ message: 'Welcome to API root...', data: [] })));
 
 // Handle invalid request
 app.all('*', (req, res) => res.status(404).json({
