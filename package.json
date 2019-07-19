@@ -4,7 +4,16 @@
   "description": "This challenge allows you to practice the concepts and techniques learned over the past Sprint and apply them in a concrete project.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "db:migrate": "npx knex migrate:latest --knexfile=./src/knexfile.js",
+    "db:seed": "npx knex seed:run  --knexfile=./src/knexfile.js",
+    "start": "npm run prod",
+    "server": "babel-node ./src/server/start.js",
+    "server:prod": "node ./dist/server/start.js",
+    "dev": "NODE_ENV=development npm-run-all server",
+    "clean": "rimraf dist",
+    "build": "babel ./src --out-dir dist",
+    "prod": "NODE_ENV=production npm-run-all clean build server:prod",
+    "watch": "nodemon"
   },
   "dependencies": {
     "@hapi/joi": "^15.1.0",
