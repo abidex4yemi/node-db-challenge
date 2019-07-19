@@ -8,6 +8,7 @@ import cors from 'cors';
 import errorHandler from './middleware/errorHandler';
 import { createSuccess, OK } from './util/success';
 import actionRouter from './routes/actionRouter';
+import projectRouter from './routes/projectRouter';
 
 const app = express();
 
@@ -21,7 +22,7 @@ app.use(helmet());
 
 app.get('/', (req, res) => res.status(OK).json(createSuccess({ message: 'Welcome to API root...', data: [] })));
 
-app.use('/api/v1', [actionRouter]);
+app.use('/api/v1', [actionRouter, projectRouter]);
 
 // Handle invalid request
 app.all('*', (req, res) => res.status(404).json({
