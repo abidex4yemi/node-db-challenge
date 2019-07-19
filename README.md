@@ -34,11 +34,11 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 1. Explain the difference between `Relational Databases` and `SQL`.
 
-*`Relational Databases:` *
+*`Relational Databases:` is a type of database based on relational model of data, store data in a tabular form as rows and columns where each row in the table represent a single record in the table `while` `SQL` Structured Query Language is used in programming, designing and managing data in a relational database management system*
 
 1. Why do tables need a `primary key`?
 
-*`primary key:` this is needed to uniquely identify each record in a table and also good for table row indexing*
+*`primary key:` this is needed to uniquely identify each record in a table and also good for table indexing*
 
 1. What is the name given to a table column that references the primary key on another table.
 
@@ -46,6 +46,8 @@ Demonstrate your understanding of this week's concepts by answering the followin
 *`Foreign key` this allows us to create a relationship between two tables*
 
 1. What do we need in order to have a _many to many_ relationship between two tables.
+
+*We need an intermediary table to connect tables together*
 
 ## Project Set Up
 
