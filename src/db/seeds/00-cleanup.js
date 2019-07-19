@@ -1,5 +1,5 @@
 /* eslint-disable func-names */
-import knexCleaner from 'knex-cleaner';
+const knexCleaner = require('knex-cleaner');
 
 exports.seed = function (knex) {
   return knexCleaner.clean(knex);
