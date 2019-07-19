@@ -2,7 +2,7 @@
   "name": "node-db-challenge",
   "version": "1.0.0",
   "description": "This challenge allows you to practice the concepts and techniques learned over the past Sprint and apply them in a concrete project.",
-  "main": "index.js",
+  "main": "start.js",
   "scripts": {
     "db:migrate": "npx knex migrate:latest --knexfile=./src/knexfile.js",
     "db:seed": "npx knex seed:run  --knexfile=./src/knexfile.js",
