@@ -8,7 +8,7 @@ import { createError, GENERIC_ERROR } from '../../util/error';
  * @param {object} res
  * @param {object} next
  */
-const getActionById = (req, res, next) => {
+const getActionById = async (req, res, next) => {
   try {
     const { action } = req;
 

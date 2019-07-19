@@ -5,5 +5,8 @@ exports.seed = function (knex, Promise) {
     { action_id: 1, context_id: 3 },
     { action_id: 1, context_id: 2 },
     { action_id: 1, context_id: 2 },
+    { action_id: 2, context_id: 3 },
+    { action_id: 2, context_id: 3 },
+    { action_id: 2, context_id: 3 },
   ]);
 };

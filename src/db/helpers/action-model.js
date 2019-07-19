@@ -11,6 +11,14 @@ export default (knex) => {
     return knex('actions').then(actions => actions.map(action => mappers.actionToBody(action)));
   }
 
+  function getActionContextById(actionID) {
+    return knex
+      .select('*')
+      .from('actions_contexts as ac')
+      .innerJoin('contexts as c', 'ac.context_id', 'c.id')
+      .where('ac.action_id', actionID);
+  }
+
   function getById(id) {
     return knex('actions')
       .where('id', id)
@@ -45,5 +53,6 @@ export default (knex) => {
     update,
     remove,
     getAll,
+    getActionContextById,
   };
 };
