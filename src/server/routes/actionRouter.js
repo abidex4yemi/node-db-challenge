@@ -1,7 +1,7 @@
 import express from 'express';
 import { validateActionParam, validateActionBody } from '../middleware';
 import {
-  getActions, addAction, updateAction, getActionById,
+  getActions, addAction, updateAction, getActionById, deleteAction,
 } from '../controllers/actions';
 
 const router = express.Router();
@@ -18,6 +18,7 @@ router
 router
   .route('/actions/:id')
   .put(validateActionBody, updateAction)
-  .get(getActionById);
+  .get(getActionById)
+  .delete(deleteAction);
 
 export default router;
